@@ -138,8 +138,8 @@ DevEco Studio NEXT Developer Beta1  (5.0.3.200), SDK: API11(4.1.0) 设备：Mate
 
 ## 贡献代码
 
-使用过程中发现任何问题都可以提[Issue](https://gitee.com/chawloo_organization/ImmersionBar/issues) 给我们，当然，我们也非常欢迎你给我们提[PR](https://gitee.com/chawloo_organization/ImmersionBar/issues) 。
+使用过程中发现任何问题都可以提[Issue](https://github.com/ChawLoo/ImmersionBar/issues) 给我们，当然，我们也非常欢迎你给我们提[PR](https://github.com/ChawLoo/ImmersionBar/pulls) 。
 
 ## 开源协议
 
-本项目基于 [MIT](https://gitee.com/chawloo_organization/ImmersionBar/blob/master/library/LICENSE) ，请自由地享受和参与开源。
+本项目基于 [MIT](https://github.com/ChawLoo/ImmersionBar/blob/master/library/LICENSE) ，请自由地享受和参与开源。
