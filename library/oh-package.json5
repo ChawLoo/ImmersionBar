@@ -3,10 +3,10 @@
   "version": "1.0.0-rc1",
   "description": "ImmersionBar,是一个修改系统状态栏和导航栏的工具，没有过多花里胡哨的API，简单高效",
   "keywords": [
-    "immersion_bar",
-    "system_bar",
-    "navigation_bar",
-    "status_bar"
+    "immersionBar",
+    "systemBar",
+    "navigationBar",
+    "statusBar"
   ],
   "main": "ImmersionBar.ets",
   "author": "ChawLoo",
