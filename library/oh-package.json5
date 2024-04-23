@@ -11,5 +11,8 @@
   "main": "ImmersionBar.ets",
   "author": "ChawLoo",
   "license": "Apache-2.0",
+  "artifactType": "obfuscation",
+  "homepage": "https://gitee.com/chawloo_organization/immersion_bar.git",
+  "repository": "https://gitee.com/chawloo_organization/immersion_bar.git",
   "dependencies": {}
 }
