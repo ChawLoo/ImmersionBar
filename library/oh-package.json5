@@ -1,17 +1,17 @@
 {
   "name": "@chawloo/immersion_bar",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc.1",
   "description": "ImmersionBar,是一个修改系统状态栏和导航栏的工具，没有过多花里胡哨的API，简单高效",
   "keywords": [
     "immersionBar",
     "systemBar",
     "navigationBar",
-    "statusBar"
+    "statusBar",
+    "HarmonyOS"
   ],
   "main": "ImmersionBar.ets",
   "author": "ChawLoo",
-  "license": "Apache-2.0",
-  "artifactType": "obfuscation",
+  "license": "MIT",
   "homepage": "https://gitee.com/chawloo_organization/immersion_bar.git",
   "repository": "https://gitee.com/chawloo_organization/immersion_bar.git",
   "dependencies": {}
