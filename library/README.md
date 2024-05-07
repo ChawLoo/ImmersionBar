@@ -16,7 +16,26 @@ ohpm install @chawloo/immersion-bar
 ```
 
 OpenHarmony ohpm 环境配置等更多内容，请参考[如何安装 OpenHarmony ohpm 包](https://gitee.com/openharmony-tpc/docs/blob/master/OpenHarmony_har_usage.md)
+## 重要的写前面
+因为框架采用window来修改状态栏和颜色，那用navigation和router切换页面也不会更改window，所以页面切换不会更改之前设置的属性
 
+如：RouterA设置了以下属性
+```typescript
+immersionBar.immersion({
+  transparentStatusBar: false,//不开启沉浸式
+  statusBarColor: '#987654',//修改状态栏颜色
+  statusBarContentColor: '#456789'//修改状态栏系统图标等颜色
+})
+```
+跳转RouterB后，仅设置以下属性
+```typescript
+immersionBar.immersion({
+  transparentStatusBar: true,//不开启沉浸式
+})
+```
+⚠️由于没有重新设置状态栏颜色和状态栏系统图标等颜色，那他会沿用RouterA中的`'#987654'` 和 `'#456789'`这两个颜色⚠️
+
+目前没有针对上一次的设置属性进行缓存，这个有待讨论，可以加也可以不加，大家可以提点建议
 ## 接口和属性列表
 接口列表
 
@@ -48,16 +67,17 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     //通过windowStage获取主window，如果获取失败也就无法修改了
-    windowStage.getMainWindow((err: BusinessError, data) => {
-      const errCode: number = err.code
-      if (errCode) {
-        L.e(`Failed to obtain the main window. Cause:${JSON.stringify(err)}`)
-        return
-      }
-      //初始化框架
-      immersionBar.init(data)
-    })
-
+    // windowStage.getMainWindow((err: BusinessError, data) => {
+    //   const errCode: number = err.code
+    //   if (errCode) {
+    //     L.e(`Failed to obtain the main window. Cause:${JSON.stringify(err)}`)
+    //     return
+    //   }
+    //   //初始化框架
+    //   immersionBar.init(data)
+    // })
+    //或者可以同步获取window
+    immersionBar.init(windowStage.getMainWindowSync())
     windowStage.loadContent('pages/main/RootPage', (err, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
@@ -92,10 +112,12 @@ export default class EntryAbility extends UIAbility {
 如果想在Tabs中设置，则可以在其onChange通过索引或其他方式修改
 
 ```typescript
-Tabs({ barPosition: BarPosition.End, controller: this.tabsController }) {
+Tabs({ barPosition: BarPosition.End, controller: this.tabsController })
+{
   ...
 }
-.onChange((index) => {
+.
+onChange((index) => {
   switch (index) {
     case 0: {
       immersionBar.immersion({
@@ -114,7 +136,8 @@ Tabs({ barPosition: BarPosition.End, controller: this.tabsController }) {
     default: {
       immersionBar.immersion({
         statusBarColor: "#FFFFFF",
-        statusBarContentColor: "#000000"
+        statusBarContentColor: "#000000",
+        transparentStatusBar: true
       })
       break;
     }
@@ -122,6 +145,7 @@ Tabs({ barPosition: BarPosition.End, controller: this.tabsController }) {
 
   this.currentIndex = index
 })
+  .padding({ bottom: immersionBar.getNavigationIndicatorHeight() })
   .animationDuration(0)
   .scrollable(false)
   .barMode(BarMode.Fixed)

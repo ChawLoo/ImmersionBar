@@ -1,13 +1,18 @@
 {
-  "name": "@chawloo/immersion_bar",
-  "version": "1.0.0-rc.1",
+  "name": "@chawloo/immersion-bar",
+  "version": "1.0.2",
   "description": "ImmersionBar,是一个修改系统状态栏和导航栏的工具，没有过多花里胡哨的API，简单高效",
   "keywords": [
     "immersionBar",
     "systemBar",
     "navigationBar",
     "statusBar",
-    "HarmonyOS"
+    "HarmonyOS",
+    "HarmonyOs Next",
+    "沉浸式",
+    "状态栏",
+    "导航栏",
+    "导航条"
   ],
   "main": "ImmersionBar.ets",
   "author": "ChawLoo",
