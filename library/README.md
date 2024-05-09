@@ -30,7 +30,7 @@ immersionBar.immersion({
 跳转RouterB后，仅设置以下属性
 ```typescript
 immersionBar.immersion({
-  transparentStatusBar: true,//不开启沉浸式
+  transparentStatusBar: true,//开启沉浸式
 })
 ```
 ⚠️由于没有重新设置状态栏颜色和状态栏系统图标等颜色，那他会沿用RouterA中的`'#987654'` 和 `'#456789'`这两个颜色⚠️
@@ -39,20 +39,20 @@ immersionBar.immersion({
 ## 接口和属性列表
 接口列表
 
-| **接口**                                     | 参数                                          | 功能       |
-| -------------------------------------------- | --------------------------------------------- | ---------- |
-| init(window.Window)                          |                                               | 初始化     |
+| **接口**                                       | 参数                                  | 功能    |
+|----------------------------------------------|-------------------------------------|-------|
+| init(window.Window)                          |                                     | 初始化   |
 | immersionBar.immersion(ImmersionBarSettings) | [ImmersionBarSettings](#请求配置)：系统栏配置 | 设置系统栏 |
 
 属性列表
 
-| **属性**                  | 类型    | 描述                                                         |
-| :------------------------ | :------ | ------------------------------------------------------------ |
+| **属性**                    | 类型      | 描述                                |
+|---------------------------|---------|-----------------------------------|
 | transparentStatusBar      | boolean | 是否透明状态栏（即是否全屏，此全屏非隐藏状态栏和系统栏，注意区分） |
-| statusBarColor            | string  | 状态栏颜色，背景色                                           |
-| statusBarContentColor     | string  | 状态栏内容颜色，即内部的系统图标颜色                         |
-| navigationBarColor        | string  | 导航栏（导航条）颜色                                         |
-| navigationBarContentColor | string  | 导航栏内容颜色（导航条或导航图标）                           |
+| statusBarColor            | string  | 状态栏颜色，背景色                         |
+| statusBarContentColor     | string  | 状态栏内容颜色，即内部的系统图标颜色                |
+| navigationBarColor        | string  | 导航栏（导航条）颜色                        |
+| navigationBarContentColor | string  | 导航栏内容颜色（导航条或导航图标）                 |
 
 ## 使用示例
 

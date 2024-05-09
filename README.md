@@ -30,7 +30,7 @@ immersionBar.immersion({
 跳转RouterB后，仅设置以下属性
 ```typescript
 immersionBar.immersion({
-  transparentStatusBar: true,//不开启沉浸式
+  transparentStatusBar: true,//开启沉浸式
 })
 ```
 ⚠️由于没有重新设置状态栏颜色和状态栏系统图标等颜色，那他会沿用RouterA中的`'#987654'` 和 `'#456789'`这两个颜色⚠️
