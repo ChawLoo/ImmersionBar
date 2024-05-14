@@ -39,20 +39,20 @@ immersionBar.immersion({
 ## 接口和属性列表
 接口列表
 
-| **接口**                                     | 参数                                          | 功能       |
-| -------------------------------------------- | --------------------------------------------- | ---------- |
-| init(window.Window)                          |                                               | 初始化     |
+| **接口**                                       | 参数                                  | 功能    |
+|----------------------------------------------|-------------------------------------|-------|
+| init(window.Window)                          |                                     | 初始化   |
 | immersionBar.immersion(ImmersionBarSettings) | [ImmersionBarSettings](#请求配置)：系统栏配置 | 设置系统栏 |
 
 属性列表
 
-| **属性**                  | 类型    | 描述                                                         |
-| :------------------------ | :------ | ------------------------------------------------------------ |
+| **属性**                    | 类型      | 描述                                |
+|---------------------------|---------|-----------------------------------|
 | transparentStatusBar      | boolean | 是否透明状态栏（即是否全屏，此全屏非隐藏状态栏和系统栏，注意区分） |
-| statusBarColor            | string  | 状态栏颜色，背景色                                           |
-| statusBarContentColor     | string  | 状态栏内容颜色，即内部的系统图标颜色                         |
-| navigationBarColor        | string  | 导航栏（导航条）颜色                                         |
-| navigationBarContentColor | string  | 导航栏内容颜色（导航条或导航图标）                           |
+| statusBarColor            | string  | 状态栏颜色，背景色                         |
+| statusBarContentColor     | string  | 状态栏内容颜色，即内部的系统图标颜色                |
+| navigationBarColor        | string  | 导航栏（导航条）颜色                        |
+| navigationBarContentColor | string  | 导航栏内容颜色（导航条或导航图标）                 |
 
 ## 使用示例
 
@@ -166,4 +166,4 @@ DevEco Studio NEXT Developer Beta1  (5.0.3.200), SDK: API11(4.1.0) 设备：Mate
 
 ## 开源协议
 
-本项目基于 [MIT](https://github.com/ChawLoo/ImmersionBar/blob/master/LICENSE) ，请自由地享受和参与开源。
+本项目基于 [MIT](https://github.com/ChawLoo/ImmersionBar/blob/master/library/LICENSE) ，请自由地享受和参与开源。
