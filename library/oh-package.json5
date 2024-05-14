@@ -17,7 +17,7 @@
   "main": "ImmersionBar.ets",
   "author": "ChawLoo",
   "license": "MIT",
-  "homepage": "https://gitee.com/chawloo_organization/immersion_bar.git",
-  "repository": "https://gitee.com/chawloo_organization/immersion_bar.git",
+  "homepage": "https://github.com/ChawLoo/ImmersionBar",
+  "repository": "https://github.com/ChawLoo/ImmersionBar",
   "dependencies": {}
 }
