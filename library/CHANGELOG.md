@@ -1,5 +1,8 @@
 # Changelog
 
+## [V1.0.4] 2024.05
+- 新增example目录
+
 ## [V1.0.3] 2024.05
 - 修改README.md的仓库地址为github地址
 
