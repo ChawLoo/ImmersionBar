@@ -1,7 +1,7 @@
 # Changelog
 
 ## [V1.0.5] 2024.05
-- 修复底部导航栏获取高度取错值问题 @Fix
+- 修复底部导航栏获取高度取错值问题 https://github.com/ChawLoo/ImmersionBar/issues/2
 
 ## [V1.0.4] 2024.05
 - 新增example目录
