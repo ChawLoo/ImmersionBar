@@ -24,7 +24,7 @@ export class ImmersionBarUtils {
     this.windowClass = w
     this.statusBarHeight = px2vp(w.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM).topRect.height)
     this.navigationIndicatorHeight = px2vp(w.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR).bottomRect.height)
-    this.navigationBarHeight = px2vp(w.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM).topRect.height)
+    this.navigationBarHeight = px2vp(w.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM).bottomRect.height)
   }
 
   /**
