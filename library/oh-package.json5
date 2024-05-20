@@ -1,6 +1,6 @@
 {
   "name": "@chawloo/immersion-bar",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ImmersionBar,是一个修改系统状态栏和导航栏的工具，没有过多花里胡哨的API，简单高效",
   "keywords": [
     "immersionBar",
