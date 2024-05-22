@@ -40,8 +40,15 @@ export class ImmersionBarUtils {
       }
       hilog.info(0x000, 'ChawLoo', '%{public}s', `Successed in setting the window layout to full-screen mode.`)
     })
+    let statusBarColor = value.statusBarColor
+    if (value.transparentStatusBar) {
+      statusBarColor = Color.Transparent.toString()
+    }
+    if (value.statusBarColor) {
+      statusBarColor = value.statusBarColor
+    }
     let sysBarProps: window.SystemBarProperties = {
-      statusBarColor: value.statusBarColor,
+      statusBarColor: statusBarColor,
       statusBarContentColor: value.statusBarContentColor,
       navigationBarColor: value.navigationBarColor,
       navigationBarContentColor: value.navigationBarContentColor

@@ -49,7 +49,7 @@ immersionBar.immersion({
 | **属性**                    | 类型      | 描述                                |
 |---------------------------|---------|-----------------------------------|
 | transparentStatusBar      | boolean | 是否透明状态栏（即是否全屏，此全屏非隐藏状态栏和系统栏，注意区分） |
-| statusBarColor            | string  | 状态栏颜色，背景色                         |
+| statusBarColor            | string  | 状态栏颜色，背景色(透明状态栏后，默认为透明色）          |
 | statusBarContentColor     | string  | 状态栏内容颜色，即内部的系统图标颜色                |
 | navigationBarColor        | string  | 导航栏（导航条）颜色                        |
 | navigationBarContentColor | string  | 导航栏内容颜色（导航条或导航图标）                 |
