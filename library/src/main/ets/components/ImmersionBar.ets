@@ -1,6 +1,4 @@
 import { window } from '@kit.ArkUI'
-import { BusinessError } from '@kit.BasicServicesKit'
-import { hilog } from '@kit.PerformanceAnalysisKit'
 
 export class ImmersionBarUtils {
   windowClass: window.Window | null = null
@@ -33,13 +31,7 @@ export class ImmersionBarUtils {
    */
   immersion(value: ImmersionBarSettings) {
     let isLayoutFullScreen = value.transparentStatusBar
-    this.windowClass?.setWindowLayoutFullScreen(isLayoutFullScreen, (err: BusinessError) => {
-      if (err.code) {
-        hilog.error(0x000, 'ChawLoo', '%{public}s', `Failed to set the window layout to full-screen mode. Cause:${JSON.stringify(err)}`)
-        return
-      }
-      hilog.info(0x000, 'ChawLoo', '%{public}s', `Successed in setting the window layout to full-screen mode.`)
-    })
+    this.windowClass?.setWindowLayoutFullScreen(isLayoutFullScreen)
     let statusBarColor = value.statusBarColor
     if (value.transparentStatusBar) {
       statusBarColor = Color.Transparent.toString()
@@ -53,13 +45,7 @@ export class ImmersionBarUtils {
       navigationBarColor: value.navigationBarColor,
       navigationBarContentColor: value.navigationBarContentColor
     }
-    this.windowClass?.setWindowSystemBarProperties(sysBarProps, (err) => {
-      if (err.code) {
-        hilog.error(0x000, 'ChawLoo', '%{public}s', `Failed to set the system bar properties. Cause:${JSON.stringify(err)}`)
-        return
-      }
-      hilog.info(0x000, 'ChawLoo', '%{public}s', 'Succeeded in setting the system bar properties.')
-    })
+    this.windowClass?.setWindowSystemBarProperties(sysBarProps)
   }
 }
 
