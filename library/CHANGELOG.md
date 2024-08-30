@@ -1,5 +1,8 @@
 # Changelog
 
+## [V1.0.9]
+- 修复不设置【transparentStatusBar】值，崩溃问题，默认值为false
+
 ## [V1.0.8]
 - 升级API，适配API12，注意API11就不知道能不能用，我看API是提示since 12，理论上应该不支持api12一下，慎重升级
 - 使用上没有任何修改，仅升级底层API

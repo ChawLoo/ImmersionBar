@@ -30,7 +30,7 @@ export class ImmersionBarUtils {
    * @param value
    */
   immersion(value: ImmersionBarSettings) {
-    let isLayoutFullScreen = value.transparentStatusBar
+    let isLayoutFullScreen: boolean = value.transparentStatusBar ?? false
     this.windowClass?.setWindowLayoutFullScreen(isLayoutFullScreen)
     let statusBarColor = value.statusBarColor
     if (value.transparentStatusBar) {
