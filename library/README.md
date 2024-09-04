@@ -39,10 +39,17 @@ immersionBar.immersion({
 ## 接口和属性列表
 接口列表
 
-| **接口**                                       | 参数                                  | 功能    |
-|----------------------------------------------|-------------------------------------|-------|
-| init(window.Window)                          |                                     | 初始化   |
-| immersionBar.immersion(ImmersionBarSettings) | [ImmersionBarSettings](#请求配置)：系统栏配置 | 设置系统栏 |
+| **接口**                                       | 参数                                  | 功能                                    |
+|----------------------------------------------|-------------------------------------|---------------------------------------|
+| init(window.Window)                          |                                     | 初始化                                   |
+| immersionBar.immersion(ImmersionBarSettings) | [ImmersionBarSettings](#请求配置)：系统栏配置 | 设置系统栏                                 |
+| immersionBar.getStatusBarHeight()            | 无                                   | 获取状态栏高度                               |
+| immersionBar.getNavigationBarHeight()        | 无                                   | 获取导航栏高度                               |
+| immersionBar.getNavigationIndicatorHeight()  | 无                                   | 获取导航条高度                               |
+| immersionBar.getNavigationHeight()           | 无                                   | 获取导航高度（导航条和导航栏去最大值）                   |
+| immersionBar.fullScreen()                    | 是否全屏：boolean,default:true           | 开启全屏（入参如果false，则为关闭）                  |
+| immersionBar.hideNavigation()                | 是否隐藏：boolean,default:true           | 隐藏导航栏（条）（入参如果false，则为关闭），实测暂时无效，api问题 |
+| immersionBar.hideStatusBar()                 | 是否隐藏：boolean,default:true           | 隐藏状态栏（入参如果false，则为关闭）                 |
 
 属性列表
 
@@ -51,7 +58,7 @@ immersionBar.immersion({
 | transparentStatusBar      | boolean | 是否透明状态栏（即是否全屏，此全屏非隐藏状态栏和系统栏，注意区分） |
 | statusBarColor            | string  | 状态栏颜色，背景色(透明状态栏后，默认为透明色）          |
 | statusBarContentColor     | string  | 状态栏内容颜色，即内部的系统图标颜色                |
-| navigationBarColor        | string  | 导航栏（导航条）颜色                        |
+| navigationBarColor        | string  | 导航栏颜色（导航条无法设置）                    |
 | navigationBarContentColor | string  | 导航栏内容颜色（导航条或导航图标）                 |
 
 ## 使用示例
@@ -155,7 +162,7 @@ onChange((index) => {
 ## 约束与限制
 
 在下述版本验证通过：
-DevEco Studio NEXT Developer Beta1  (5.0.3.200), SDK: API11(4.1.0) 设备：Mate 60 Pro（Preview2）
+DevEco Studio NEXT Developer Beta5  (5.0.3.700), SDK: API12(5.0.0) 设备：Mate 60 Pro（beta5）
 
 ## FAQ
 - 目前只是简单的设置，细节问题和更多功能正在研究和发掘开发，欢迎提交PR，共同进步

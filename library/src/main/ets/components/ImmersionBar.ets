@@ -18,6 +18,29 @@ export class ImmersionBarUtils {
     return this.navigationIndicatorHeight
   }
 
+  getNavigationHeight(): number {
+    return this.navigationBarHeight > this.navigationIndicatorHeight ? this.navigationBarHeight : this.navigationIndicatorHeight
+  }
+
+  fullScreen(isFullScreen: boolean = true) {
+    if (canIUse('SystemCapability.Window.SessionManager')) {
+      this.windowClass?.setSpecificSystemBarEnabled('status', !isFullScreen)
+      this.windowClass?.setSpecificSystemBarEnabled('navigation', !isFullScreen)
+    }
+  }
+
+  hideNavigation(isHide: boolean = true) {
+    if (canIUse('SystemCapability.Window.SessionManager')) {
+      this.windowClass?.setSpecificSystemBarEnabled('navigation', !isHide)
+    }
+  }
+
+  hideStatusBar(isHide: boolean = true) {
+    if (canIUse('SystemCapability.Window.SessionManager')) {
+      this.windowClass?.setSpecificSystemBarEnabled('status', !isHide)
+    }
+  }
+
   init(w: window.Window) {
     this.windowClass = w
     this.statusBarHeight = px2vp(w.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM).topRect.height)
@@ -31,7 +54,7 @@ export class ImmersionBarUtils {
    */
   immersion(value: ImmersionBarSettings) {
     let isLayoutFullScreen: boolean = value.transparentStatusBar ?? false
-    this.windowClass?.setWindowLayoutFullScreen(isLayoutFullScreen)
+    this.windowClass?.setImmersiveModeEnabledState(isLayoutFullScreen)
     let statusBarColor = value.statusBarColor
     if (value.transparentStatusBar) {
       statusBarColor = Color.Transparent.toString()
@@ -55,4 +78,5 @@ export interface ImmersionBarSettings {
   statusBarContentColor?: string,
   navigationBarColor?: string,
   navigationBarContentColor?: string,
+  fullScreen?: boolean,
 }

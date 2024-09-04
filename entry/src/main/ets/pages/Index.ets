@@ -4,10 +4,11 @@ import CollectionPage from './CollectionPage'
 import immersionBar from 'ImmersionBar/ImmersionBar'
 
 @Entry
-@Component
+@ComponentV2
 export default struct Index {
-  @State currentIndex: number = 0
+  @Local currentIndex: number = 0
   private tabsController = new TabsController()
+  @Local homeTransparentStatusBar: boolean = false
 
   @Builder
   TabBuilder(title: string, index: number, selectedImg: Resource, normalImg: Resource) {
@@ -24,10 +25,20 @@ export default struct Index {
     .width('100%')
   }
 
+  onPageShow(): void {
+    immersionBar.immersion({
+      transparentStatusBar: this.homeTransparentStatusBar,
+      statusBarColor: Color.Red.toString(),
+      statusBarContentColor: '#FF0789'
+    })
+  }
+
   build() {
     Tabs({ barPosition: BarPosition.End, controller: this.tabsController }) {
       TabContent() {
-        MainPage()
+        MainPage({
+          isTransparentBar: this.homeTransparentStatusBar!!
+        })
       }
       .tabBar(this.TabBuilder('首页', 0, $r('app.media.tab_home_sel'), $r('app.media.tab_home')))
 
@@ -46,9 +57,9 @@ export default struct Index {
       switch (index) {
         case 0:
           immersionBar.immersion({
-            transparentStatusBar: false,
-            statusBarColor: '#987654',
-            statusBarContentColor: '#456789'
+            transparentStatusBar: this.homeTransparentStatusBar,
+            statusBarColor: Color.Red.toString(),
+            statusBarContentColor: '#FF0789'
           })
           break
         case 1:

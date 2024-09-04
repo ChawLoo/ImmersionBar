@@ -1,5 +1,13 @@
 # Changelog
 
+## [V1.1.0]
+- ！！！重要的写前面，目前手头的mate60只有导航条，没有导航栏也改不了，无法测试，所有有问题提issue，我随时跟进
+- 新增`getNavigationHeight()` 获取导航高度，导航条和导航栏取最大值
+- 新增`fullScreen(isFullScreen:boolean = true)`全屏api，默认值为全屏，会隐藏状态栏和导航栏（条），实测导航条没有隐藏，但是官方提供了api，等后续版本看看，就像颜色修改失败一样。
+- 举一反三，新增`hideNavigation(isHide: boolean = true)` 和 `hideStatusBar(isHide: boolean = true)`，效果字面意思，已知问题也同上。
+- 开启沉浸式采用新api，`setImmersiveModeEnabledState`，已测没问题，效果一致
+- beta5的状态栏颜色无法修改问题，官方回复升级beta6修复，跟框架无关，无需任何改动。
+
 ## [V1.0.9]
 - 修复不设置【transparentStatusBar】值，崩溃问题，默认值为false
 

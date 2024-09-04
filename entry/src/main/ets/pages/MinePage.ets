@@ -1,5 +1,4 @@
-@Entry
-@Component
+@ComponentV2
 export default struct MainPage {
   build() {
     Column() {

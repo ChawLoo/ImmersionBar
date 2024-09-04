@@ -1,6 +1,6 @@
 import { router } from '@kit.ArkUI'
 
-@Component
+@ComponentV2
 export default struct CollectionPage {
   build() {
     Column() {
