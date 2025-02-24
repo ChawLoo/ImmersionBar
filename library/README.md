@@ -105,15 +105,26 @@ export default class EntryAbility extends UIAbility {
 
 ### ImmersionBar API
 
-#### 在对应页面的aboutToAppear()中设置
+#### 建议在对应页面的onPageShow()中设置，如果是Navigation，则在对应的onShown()设置
+原因前面说过了，用的是同一个window，所以回来后要改成当前页面的状态，本框架只提供修改系统栏，至于在哪里设置都一样，什么方式设置都一样。
 
 ```typescript
-  aboutToAppear(): void {
+  onPageShow(): void {
   immersionBar.immersion({
     statusBarColor: "#3369E7",
     statusBarContentColor: "#FFFFFF"
   })
 }
+
+NavDestination(){
+  ···
+}
+.onShown(()=>{
+  //每次进入都会调用
+  immersionBar.immersion({
+      ···
+  })
+})
 ```
 
 如果想在Tabs中设置，则可以在其onChange通过索引或其他方式修改
